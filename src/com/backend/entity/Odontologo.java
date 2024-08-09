@@ -6,7 +6,7 @@ public class Odontologo {
     private String nombre;
     private String apellido;
 
-    public Odontologo(long id, String numeroMatricula, java.lang.String nombre, java.lang.String apellido) {
+    public Odontologo(long id, String numeroMatricula, String nombre, String apellido) {
         this.id = id;
         this.numeroMatricula = numeroMatricula;
         this.nombre = nombre;
@@ -22,7 +22,6 @@ public class Odontologo {
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -35,19 +34,19 @@ public class Odontologo {
         this.numeroMatricula = numeroMatricula;
     }
 
-    public java.lang.String getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(java.lang.String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public java.lang.String getApellido() {
+    public String getApellido() {
         return apellido;
     }
 
-    public void setApellido(java.lang.String apellido) {
+    public void setApellido(String apellido) {
         this.apellido = apellido;
     }
     @Override

@@ -20,6 +20,15 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
         try {
             connection = H2Connection.getConnection();
             connection.setAutoCommit(false);
+
+            PreparedStatement compararMatricula = connection.prepareStatement("SELECT COUNT(*) FROM ODONTOLOGOS WHERE MATRICULA = ?");
+            compararMatricula.setString(1, odontologo.getNumeroMatricula());
+            ResultSet rs = compararMatricula.executeQuery();
+            rs.next();
+            if (rs.getInt(1) > 0) {
+                logger.warn("La matrícula ya está registrada.");
+            }
+
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO ODONTOLOGOS (MATRICULA, NOMBRE, APELLIDO) VALUES ( ?, ?, ?)");
             preparedStatement.setString(1, odontologo.getNumeroMatricula());
             preparedStatement.setString(2, odontologo.getNombre());
@@ -32,7 +41,7 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
                 odontologoRegistrado = new Odontologo(resultSet.getLong("id"), odontologo.getNumeroMatricula(), odontologo.getNombre(), odontologo.getApellido());
             }
 
-            logger.info("Odontólogo guardado: " + odontologo);
+            logger.info("Odontólogo guardado: " + odontologoRegistrado);
             connection.commit();
         } catch (Exception exception){
             logger.error(exception.getMessage());
@@ -50,8 +59,8 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
         }finally {
             try {
                 connection.close();
-            } catch (Exception ex) {
-                logger.error("No se pudo cerrar la conexion: " + ex.getMessage());
+            } catch (Exception exception) {
+                logger.error("No se pudo cerrar la conexion: " + exception.getMessage());
             }
         }
         return odontologo;
@@ -75,19 +84,20 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
                 odontologos.add(odontologo);
             }
             logger.info("Listado de todos los odontólogos: " + odontologos);
-        }catch (Exception e) {
-            logger.error(e.getMessage());
-            e.printStackTrace();
+        }catch (Exception exception) {
+            logger.error(exception.getMessage());
+            exception.printStackTrace();
 
         } finally {
             try {
                 connection.close();
-            } catch (Exception ex) {
-                logger.error("Ha ocurrido un error al intentar cerrar la bdd. " + ex.getMessage());
-                ex.printStackTrace();
+            } catch (Exception exception) {
+                logger.error("Ha ocurrido un error al intentar cerrar la bdd. " + exception.getMessage());
+                exception.printStackTrace();
             }
         }
         logger.info("Listado de todos los odontologos: " + odontologos);
         return odontologos;
     }
+
 }

@@ -15,6 +15,12 @@ public class OdontologoDaoMemoria implements IDao<Odontologo> {
 
     @Override
     public Odontologo guardar(Odontologo odontologo) {
+        for (Odontologo o : odontologos) {
+            if (o.getNumeroMatricula().equals(odontologo.getNumeroMatricula())) {
+                logger.warn("La matrícula ya está registrada.");
+                return null;
+            }
+        }
         odontologos.add(odontologo);
         logger.info("Odontólogo guardado: " + odontologo);
         return odontologo;
@@ -25,4 +31,5 @@ public class OdontologoDaoMemoria implements IDao<Odontologo> {
         logger.info("Listado de todos los odontólogos: " + odontologos);
         return odontologos;
     }
+
 }

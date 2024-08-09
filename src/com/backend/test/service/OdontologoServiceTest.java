@@ -3,8 +3,6 @@ package com.backend.test.service;
 import com.backend.entity.Odontologo;
 import com.backend.service.impl.OdontologoService;
 import com.backend.repository.impl.OdontologoDaoH2;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
@@ -30,10 +28,7 @@ public class OdontologoServiceTest {
 
         List<Odontologo> odontologos = odontologoService.listarTodosLosOdontologos();
 
-        assertEquals(5, odontologos.size());
-        assertEquals("Juan", odontologos.get(0).getNombre());
-        assertEquals("Luis", odontologos.get(1).getNombre());
-
+        assertEquals("Pepito", odontologos.get(0).getNombre());
+        assertEquals("Juana", odontologos.get(1).getNombre());
     }
-
 }

@@ -6,4 +6,5 @@ import java.util.List;
 public interface IOdontologoService {
     Odontologo guardarOdontologo(Odontologo odontologo);
     List<Odontologo> listarTodosLosOdontologos();
+
 }

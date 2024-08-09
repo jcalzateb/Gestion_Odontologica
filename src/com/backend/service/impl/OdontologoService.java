@@ -13,8 +13,7 @@ public class OdontologoService implements IOdontologoService{
 
     @Override
     public Odontologo guardarOdontologo(Odontologo odontologo) {
-        odontologoDao.guardar(odontologo);
-        return odontologo;
+        return odontologoDao.guardar(odontologo);
     }
 
     @Override
