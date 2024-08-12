@@ -12,6 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class OdontologoDaoMemoriaTest {
+    //los tets unitarios no se realizan sobre la capa repository sino sobre la capa service
     private IDao<Odontologo> odontologoIDao = new OdontologoDaoMemoria(new ArrayList());
     @Test
     public void guardarYlistarLosOdontologos() {

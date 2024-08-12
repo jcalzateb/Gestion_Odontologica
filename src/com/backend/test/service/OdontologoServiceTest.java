@@ -12,6 +12,7 @@ public class OdontologoServiceTest {
 
     @Test
     public void deberiaGuardarOdontologosYListarTodosLosOdontologos() {
+        //recuerden que no es correcto testear/llamar dos metodos del servicio en el mismo test
         odontologoService = new OdontologoService(new OdontologoDaoH2());
 
         Odontologo odontologoARegistrar = new Odontologo( "98765", "Manuel", "Salas");

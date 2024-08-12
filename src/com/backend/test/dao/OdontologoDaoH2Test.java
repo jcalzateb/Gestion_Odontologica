@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 public class OdontologoDaoH2Test {
+    //los tets unitarios no se realizan sobre la capa repository sino sobre la capa service
     private  static IDao<Odontologo> odontologoIDao = new OdontologoDaoH2();
 
     @BeforeEach

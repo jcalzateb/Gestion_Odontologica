@@ -15,6 +15,7 @@ public class OdontologoDaoMemoria implements IDao<Odontologo> {
 
     @Override
     public Odontologo guardar(Odontologo odontologo) {
+        //falta simular la generacion de id y recordar no retornar ni modificar lo recibido, sino un auxiliar
         for (Odontologo o : odontologos) {
             if (o.getNumeroMatricula().equals(odontologo.getNumeroMatricula())) {
                 logger.warn("La matrícula ya está registrada.");
