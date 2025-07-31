@@ -15,7 +15,7 @@ public class OdontologoDaoH2Test {
     @BeforeEach
     public void guardarOdontologosf() {
         odontologoIDao.guardar(new Odontologo("12345","Juan", "Alzate"));
-        odontologoIDao.guardar(new Odontologo("56789","Luis", "Riofrio"));
+        odontologoIDao.guardar(new Odontologo("56789","Luis", "Rios"));
         odontologoIDao.guardar(new Odontologo("15975","Pepe", "Bella"));
     }
     @Test

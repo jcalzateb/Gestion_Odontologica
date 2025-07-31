@@ -22,7 +22,7 @@ public class OdontologoServiceTest {
         assertNotNull(odontologoRegistrado.getId());
 
         Odontologo odontologo1 = new Odontologo("12345", "Juan", "Alzate");
-        Odontologo odontologo2 = new Odontologo("56789", "Luis", "Riofrio");
+        Odontologo odontologo2 = new Odontologo("56789", "Luis", "Rios");
 
         odontologoService.guardarOdontologo(odontologo1);
         odontologoService.guardarOdontologo(odontologo2);

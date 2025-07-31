@@ -17,7 +17,7 @@ public class OdontologoDaoMemoriaTest {
     @Test
     public void guardarYlistarLosOdontologos() {
         odontologoIDao.guardar(new Odontologo("12345","Juan", "Alzate"));
-        odontologoIDao.guardar(new Odontologo("56789","Luis", "Riofrio"));
+        odontologoIDao.guardar(new Odontologo("56789","Luis", "Rios"));
         odontologoIDao.guardar(new Odontologo("15975","Pepe", "Bella"));
         odontologoIDao.guardar(new Odontologo("98765", "Manuel", "Salas"));
         List<Odontologo> odontologos = odontologoIDao.listarTodos();
